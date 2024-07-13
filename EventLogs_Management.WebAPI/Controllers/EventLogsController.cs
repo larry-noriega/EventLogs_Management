@@ -8,15 +8,13 @@ using System.Net;
 namespace EventLogs_Management.WebAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class EventLogsController : ControllerBase
     {
         private readonly IEventLogsDomain? _eventLogs;
-        private readonly ILogger<EventLogsController> _logger;
 
         public EventLogsController(ILogger<EventLogsController> logger, IEventLogsDomain eventLogsDomain)
-        {           
-            _logger = logger;
+        {  
             _eventLogs = eventLogsDomain;
         }
 
@@ -42,9 +40,9 @@ namespace EventLogs_Management.WebAPI.Controllers
         [HttpGet("EventFilter")]
         [ProducesResponseType(typeof(IEnumerable<EventLog>), (int)HttpStatusCode.OK)]
         [Produces("application/json")]
-        public async Task<ActionResult<List<EventLog>>> EventFilter(EventEnum input)
+        public async Task<ActionResult<List<EventLog>>> EventFilter(EventEnum @event)
         {
-            var result = await _eventLogs!.EventFilter(new() { EventType = input.ToString() });
+            var result = await _eventLogs!.EventFilter(new() { EventType = @event.ToString() });
 
             return Ok(result);
         }
