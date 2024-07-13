@@ -14,8 +14,7 @@ namespace EventLogs_Management.WebAPI.Controllers
         private readonly IEventLogsDomain? _eventLogs;
 
         public EventLogsController(ILogger<EventLogsController> logger, IEventLogsDomain eventLogsDomain)
-        {           
-            _logger = logger;
+        {  
             _eventLogs = eventLogsDomain;
         }
 
