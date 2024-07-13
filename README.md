@@ -20,3 +20,4 @@
 
 ![image](https://github.com/user-attachments/assets/e7b10beb-7de8-4652-9f0e-0f0bb3f05c92)
 
+- La rama develop se dejó como muestra y constancia de la evolución del desarrollo del proyecto.
