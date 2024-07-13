@@ -49,6 +49,16 @@ namespace EventLogs_Management.WebAPI.Controllers
             return Ok(result);
         }
 
+        [HttpPost("DateAndEventFilter")]
+        [ProducesResponseType(typeof(IEnumerable<EventLog>), (int)HttpStatusCode.OK)]
+        [Produces("application/json")]
+        public async Task<ActionResult<List<EventLog>>> DateAndEventFilter([FromBody] DateFilter input, EventEnum @event)
+        {
+            var result = await _eventLogs!.DateAndEventFilter(input, new() { EventType = @event.ToString() });
+
+            return Ok(result);
+        }
+
         [HttpPost("SaveEvent")]
         [ProducesResponseType(typeof(EventLog), (int)HttpStatusCode.OK)]
         [Produces("application/json")]

@@ -4,6 +4,7 @@ namespace EventLogs_Management.Domain
 {
     public interface IEventLogsDomain
     {
+        Task<IEnumerable<EventLog>> DateAndEventFilter(DateFilter input, EventFilter eve);
         Task<IEnumerable<EventLog>> DateFilter(DateFilter input);
         Task<IEnumerable<EventLog>> EventFilter(EventFilter input);
         Task<IEnumerable<EventLog>> GetLogList();

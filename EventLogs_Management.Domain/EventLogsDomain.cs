@@ -20,15 +20,7 @@ public class EventLogsDomain : IEventLogsDomain
     public async Task<IEnumerable<EventLog>> GetLogList()
     {
         return await _repository!.List();
-    }
-
-    public async Task<IEnumerable<EventLog>> SaveEvent(EventFilter input)
-    {
-        IEnumerable<EventLog> result = await _repository!.Filter(e => e.EventType == input.EventType);
-
-        return result
-                .OrderByDescending(e => e.Date);
-    }
+    }   
 
     public async Task<IEnumerable<EventLog>> DateFilter(DateFilter input)
     {
@@ -41,6 +33,14 @@ public class EventLogsDomain : IEventLogsDomain
     public async Task<IEnumerable<EventLog>> EventFilter(EventFilter input)
     {
         IEnumerable<EventLog> result = await _repository!.Filter(e => e.EventType == input.EventType);
+
+        return result
+                .OrderByDescending(e => e.Date);
+    }
+
+    public async Task<IEnumerable<EventLog>> DateAndEventFilter(DateFilter input, EventFilter eve)
+    {
+        IEnumerable<EventLog> result = await _repository!.Filter(e => e.Date >= input.StartDate && e.Date <= input.EndDate && e.EventType == eve.EventType);
 
         return result
                 .OrderByDescending(e => e.Date);
