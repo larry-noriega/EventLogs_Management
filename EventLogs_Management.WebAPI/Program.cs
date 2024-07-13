@@ -1,6 +1,8 @@
 using EventLogs_Management.Core.SQL;
+using EventLogs_Management.Domain;
 using EventLogs_Management.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Show Enums' name instead of serial numbers.
+builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+
 //Get Connection String
 var connectionString = builder.Configuration.GetConnectionString("default");
 
@@ -18,6 +23,10 @@ builder.Services.AddDbContext<EventsLogsDBContext>();
 
 // Set up Database
 builder.Services.Configure<SQLSettings>(options => { options.ConnectionString = connectionString; });
+
+// add domain
+builder.Services.AddTransient<IEventLogsDomain, EventLogsDomain>();
+
 
 var app = builder.Build();
 

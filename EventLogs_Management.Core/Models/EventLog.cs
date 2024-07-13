@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace EventLogs_Management.Core;
+namespace EventLogs_Management.Core.Models;
 
 public class EventLog : EntityBase
 {

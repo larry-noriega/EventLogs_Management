@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLogs_Management.Infras
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLogs_Management.Core", "EventLogs_Management.Core\EventLogs_Management.Core.csproj", "{A0F751C8-9B2E-4014-89DC-CDE3B670AE0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventLogs_Management.Domain", "EventLogs_Management.Domain\EventLogs_Management.Domain.csproj", "{ADB2481F-66A8-4714-8A78-0E02B7D4B68B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{A0F751C8-9B2E-4014-89DC-CDE3B670AE0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0F751C8-9B2E-4014-89DC-CDE3B670AE0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0F751C8-9B2E-4014-89DC-CDE3B670AE0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADB2481F-66A8-4714-8A78-0E02B7D4B68B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ADB2481F-66A8-4714-8A78-0E02B7D4B68B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ADB2481F-66A8-4714-8A78-0E02B7D4B68B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ADB2481F-66A8-4714-8A78-0E02B7D4B68B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

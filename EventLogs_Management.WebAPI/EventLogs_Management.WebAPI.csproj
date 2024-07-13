@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EventLogs_Management.Core\EventLogs_Management.Core.csproj" />
+    <ProjectReference Include="..\EventLogs_Management.Domain\EventLogs_Management.Domain.csproj" />
     <ProjectReference Include="..\EventLogs_Management.Infrastructure\EventLogs_Management.Infrastructure.csproj" />
   </ItemGroup>
 

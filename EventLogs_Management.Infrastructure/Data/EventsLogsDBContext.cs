@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using EventLogs_Management.Core;
 using EventLogs_Management.Core.SQL;
+using EventLogs_Management.Core.Models;
 
 namespace EventLogs_Management.Infrastructure.Data;
 
